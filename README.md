@@ -35,5 +35,5 @@ npm start
 ## Backlog Tasks
 
 1. Refactor `data-table-search` functionality to filter based on `searchKeys`
-2. Mobile responsiveness
+2. Additional mobile responsiveness
 3. Favicon
