@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useDataStore } from "../../../store/use-data-store";
 import { searchString } from "../../../utils";
+import { DataSearchElement } from "./styles";
 
 const DataTableSearch = ({ searchKeys = [] }) => {
   const [searchValue, setSearchValue] = React.useState("");
@@ -38,7 +39,7 @@ const DataTableSearch = ({ searchKeys = [] }) => {
     [setSearchResults, searchResults]
   );
 
-  return <input onChange={handleChange} value={searchValue} />;
+  return <DataSearchElement onChange={handleChange} value={searchValue} />;
 };
 
 export default DataTableSearch;

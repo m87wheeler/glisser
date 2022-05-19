@@ -25,8 +25,11 @@ export const GlobalStyles = createGlobalStyle`
         // FONTS
         --font-family-sans: Lato, sans-serif;
 
+        --font-size-xs: .75rem;
         --font-size-sm: .9rem;
         --font-size-md: 1rem;
+        --font-size-lg: 1.1rem;
+        --font-size-xl: 1.25rem;
 
         // UI
         --border-radius-xs: .25rem;
