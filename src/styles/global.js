@@ -44,6 +44,8 @@ export const GlobalStyles = createGlobalStyle`
     html, body {
         width: 100%;
         height: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
         font-family: var(--font-family-sans);
         text-rendering: optimizeLegibility;
         background-color: var(--primary-10);
