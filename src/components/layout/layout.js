@@ -4,25 +4,27 @@ import Button from "../button/button";
 import DataTable from "../data-table/data-table";
 
 const Layout = () => {
-  const { setData, data } = useDataStore();
-  const [offset, setOffset] = React.useState(0);
-  const [editingRow, setEditingRow] = React.useState(null);
+  const {
+    setData,
+    data,
+    editingRow,
+    setEditingRow,
+    pageOffset,
+    setPageOffset,
+  } = useDataStore();
 
   // Toggle
-  const handleEditRow = React.useCallback((rowIndex) => {
-    setEditingRow(rowIndex);
-  }, []);
+  const handleEditRow = React.useCallback(
+    (rowIndex) => {
+      setEditingRow(rowIndex);
+    },
+    [setEditingRow]
+  );
 
   // Toggle
   const handleOffset = React.useCallback(
-    (n) => () => {
-      setOffset((state) => {
-        return state + n < 0 || state + n > data?.length - 1
-          ? state
-          : state + n;
-      });
-    },
-    [data]
+    (n) => () => setPageOffset(n, data?.length - 1),
+    [data, setPageOffset]
   );
 
   // Update
@@ -34,7 +36,8 @@ const Layout = () => {
           const matchingEntries = data?.map((array) => {
             return array.map((entry) => {
               if (
-                data?.[offset]?.[editingRow]?.artist?.id === entry?.artist?.id
+                data?.[pageOffset]?.[editingRow]?.artist?.id ===
+                entry?.artist?.id
               )
                 return { ...entry, artist: { ...entry?.artist, name: value } };
               return entry;
@@ -44,21 +47,21 @@ const Layout = () => {
           return;
         default:
           const copyState = [...data];
-          const updatedData = data?.[offset]?.map((entry, i) => {
+          const updatedData = data?.[pageOffset]?.map((entry, i) => {
             if (editingRow === i) return { ...entry, [name]: value };
             return entry;
           });
-          copyState[offset] = updatedData;
+          copyState[pageOffset] = updatedData;
           setData(copyState);
       }
     },
-    [offset, editingRow, data, setData]
+    [pageOffset, editingRow, data, setData]
   );
 
   return (
     <div>
       <DataTable
-        data={data?.[offset]}
+        data={data?.[pageOffset]}
         headers={["Artist", "Album", "Year", "Condition", "Action"]}
         dataKeys={["artist.name", "album_title", "year", "condition"]}
         onChange={handleUpdateData}

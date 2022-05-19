@@ -10,7 +10,14 @@ export const useDataStore = create((set, get) => ({
   setPageOffset: (n = 0, max = 1) => {
     set((state) => ({
       ...state,
-      pageOffset: state + n < 0 || state + n > max ? state : state + n,
+      pageOffset:
+        state.pageOffset + n < 0 || state.pageOffset + n > max
+          ? state.pageOffset
+          : state.pageOffset + n,
     }));
+  },
+  editingRow: null,
+  setEditingRow: (editingRow) => {
+    set({ editingRow });
   },
 }));
