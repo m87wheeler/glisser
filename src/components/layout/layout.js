@@ -27,6 +27,16 @@ const Layout = () => {
       const { name, value } = e.target;
       switch (name) {
         case "artist.name":
+          const matchingEntries = data?.map((array) => {
+            return array.map((entry) => {
+              if (
+                data?.[offset]?.[editingRow]?.artist?.id === entry?.artist?.id
+              )
+                return { ...entry, artist: { ...entry?.artist, name: value } };
+              return entry;
+            });
+          });
+          setData(matchingEntries);
           return;
         default:
           const copyState = [...data];
