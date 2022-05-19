@@ -1,11 +1,7 @@
 import * as React from "react";
 
-const DataTableCell = ({ value, disabled, onChange }) => {
-  return (
-    <td>
-      <input value={value} onChange={onChange} disabled={disabled} />
-    </td>
-  );
+const DataTableCell = ({ ...props }) => {
+  return <input {...props} />;
 };
 
 export default DataTableCell;

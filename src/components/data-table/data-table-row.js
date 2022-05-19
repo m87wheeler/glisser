@@ -17,12 +17,14 @@ const DataTableRow = ({
   return (
     <tr>
       {keys?.map((_, i) => (
-        <DataTableCell
-          key={i}
-          value={keys[i].split(".").reduce((o, i) => o[i], row)}
-          onChange={onChange}
-          disabled={editingRow !== rowIndex}
-        />
+        <td key={i}>
+          <DataTableCell
+            name={keys[i]}
+            value={keys[i].split(".").reduce((o, i) => o[i], row)}
+            onChange={onChange}
+            disabled={editingRow !== rowIndex}
+          />
+        </td>
       ))}
       {toggleEdit && (
         <td>
