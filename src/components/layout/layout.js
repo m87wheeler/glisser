@@ -69,7 +69,7 @@ const Layout = () => {
 
   return (
     <LayoutContainer>
-      <Header>My Amazing Record Collection</Header>
+      <Header align="center">My Amazing Record Collection</Header>
       <DataTableSearch searchKeys={["artist.name", "album_title"]} />
       <DataTable
         data={tableData}
