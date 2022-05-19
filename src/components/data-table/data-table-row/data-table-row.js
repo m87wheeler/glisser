@@ -1,4 +1,5 @@
 import * as React from "react";
+import { underscoreString } from "../../../utils";
 import Button from "../../button/button";
 import DataTableCell from "../data-table-cell/data-table-cell";
 import { DataRowContainer } from "./styles";
@@ -13,7 +14,6 @@ const DataTableRow = ({
 }) => {
   const handleClick = React.useCallback(() => {
     toggleEdit(editingRow ? null : rowIndex);
-    if (editingRow === rowIndex) console.log("Save...");
   }, [editingRow, rowIndex, toggleEdit]);
 
   return (
@@ -22,7 +22,9 @@ const DataTableRow = ({
         <td key={i}>
           <DataTableCell
             name={keys[i]}
-            value={keys[i].split(".").reduce((o, i) => o[i], row)}
+            value={underscoreString(
+              keys[i].split(".").reduce((o, i) => o[i], row)
+            )}
             onChange={onChange}
             disabled={editingRow !== rowIndex}
           />

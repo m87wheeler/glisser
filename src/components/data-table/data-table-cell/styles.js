@@ -5,6 +5,7 @@ export const DataCellElement = styled.input`
   padding: 0.5rem;
   font-size: var(--font-size-sm);
   font-weight: lighter;
+  text-transform: capitalize;
   background-color: var(--grey-10);
   color: var(--primary-20);
   border: 2px solid transparent;

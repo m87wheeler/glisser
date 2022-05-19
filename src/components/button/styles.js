@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const ButtonElement = styled.button`
   width: 100%;
+  min-width: 5rem;
   max-width: 10rem;
-  padding: 0.25rem 1.5rem;
+  padding: 0.25rem 1rem;
   border: 2px solid transparent;
   background-color: ${({ variant = "secondary" }) => `var(--${variant}-10)`};
   color: ${({ variant = "secondary" }) => `var(--${variant}-10-contrast)`};

@@ -39,7 +39,13 @@ const DataTableSearch = ({ searchKeys = [] }) => {
     [setSearchResults, searchResults]
   );
 
-  return <DataSearchElement onChange={handleChange} value={searchValue} />;
+  return (
+    <DataSearchElement
+      onChange={handleChange}
+      value={searchValue}
+      placeholder="Search by artist or album"
+    />
+  );
 };
 
 export default DataTableSearch;

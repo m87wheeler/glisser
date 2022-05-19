@@ -1468,6 +1468,11 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@m87wheeler/use-media-query@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@m87wheeler/use-media-query/-/use-media-query-0.1.0.tgz#d14808751d969eb0766e4360f3b34649a542b2f8"
+  integrity sha512-bWmjcN1p9aw95i4hePK6fGffmsEI3LwuHoEXy3Dueo7wjxbZkFAVVvPskGpLGV0gXKh8VBLlIcczT15X186EIA==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
