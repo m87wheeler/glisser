@@ -1,5 +1,5 @@
 import * as React from "react";
-import DataTableRow from "./row";
+import DataTableRow from "./data-table-row";
 
 const DataTable = ({
   data = [],

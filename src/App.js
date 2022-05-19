@@ -1,4 +1,5 @@
 import * as React from "react";
+import Button from "./components/button/button";
 import DataTable from "./components/data-table/data-table";
 import { useDataStore } from "./store/use-data-store";
 
@@ -11,15 +12,28 @@ export const App = () => {
     setEditingRow(rowIndex);
   }, []);
 
+  const handleOffset = React.useCallback(
+    (n) => () => {
+      setOffset((state) => state + n);
+    },
+    []
+  );
+
   return (
-    <DataTable
-      data={data?.[offset]}
-      headers={["Artist", "Album", "Year", "Condition", "Action"]}
-      dataKeys={["artist.name", "album_title", "year", "condition"]}
-      onChange={() => {}}
-      toggleEdit={handleEditRow}
-      editingRow={editingRow}
-    />
+    <div>
+      <DataTable
+        data={data?.[offset]}
+        headers={["Artist", "Album", "Year", "Condition", "Action"]}
+        dataKeys={["artist.name", "album_title", "year", "condition"]}
+        onChange={() => {}}
+        toggleEdit={handleEditRow}
+        editingRow={editingRow}
+      />
+      <div>
+        <Button onClick={handleOffset(-1)}>Previous</Button>
+        <Button onClick={handleOffset(1)}>Next</Button>
+      </div>
+    </div>
   );
 };
 

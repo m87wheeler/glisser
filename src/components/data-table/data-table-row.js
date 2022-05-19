@@ -1,4 +1,5 @@
 import * as React from "react";
+import DataTableCell from "./data-table-cell";
 
 const DataTableRow = ({
   rowIndex,
@@ -16,12 +17,12 @@ const DataTableRow = ({
   return (
     <tr>
       {keys?.map((_, i) => (
-        <td key={i}>
-          <input
-            value={keys[i].split(".").reduce((o, i) => o[i], row)}
-            onChange={onChange}
-          />
-        </td>
+        <DataTableCell
+          key={i}
+          value={keys[i].split(".").reduce((o, i) => o[i], row)}
+          onChange={onChange}
+          disabled={editingRow !== rowIndex}
+        />
       ))}
       {toggleEdit && (
         <td>
