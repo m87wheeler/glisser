@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DataTableContainer = styled.div`
   width: 100%;
   max-width: var(--responsive-max);
-  min-width: var(--responsive-min);
+  min-width: 90vw;
   margin: 0 auto;
   padding: 1rem;
   background-color: var(--primary-20);
@@ -28,4 +28,8 @@ export const DataTableElement = styled.table`
     font-weight: 600;
     text-align: left;
   }
+`;
+
+export const DataHeaderElement = styled.th`
+  width: ${(p) => `${p.spread * 10}%`};
 `;

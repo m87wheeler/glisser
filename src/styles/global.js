@@ -25,12 +25,11 @@ export const GlobalStyles = createGlobalStyle`
         // FONTS
         --font-family-sans: Lato, sans-serif;
 
-        --font-size-xs: .75rem;
-        --font-size-sm: .9rem;
-        --font-size-md: 1rem;
-        --font-size-lg: 1.1rem;
-        --font-size-xl: 1.25rem;
-
+        --font-size-h1: calc(1.375rem + 1.5vw);
+        --font-size-sm: clamp(0.9rem, 0.86rem + 0.2vw, 1.1rem);
+        --font-size-md: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+        --font-size-xl: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+    
         // UI
         --border-radius-xs: .25rem;
         --border-radius-sm: .5rem;
@@ -40,6 +39,8 @@ export const GlobalStyles = createGlobalStyle`
         --responsive-max: 1200px;
         --responsive-min: 800px;
     }
+
+
 
     html, body {
         width: 100%;

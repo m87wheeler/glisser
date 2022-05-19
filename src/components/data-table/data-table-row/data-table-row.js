@@ -2,7 +2,7 @@ import * as React from "react";
 import { underscoreString } from "../../../utils";
 import Button from "../../button/button";
 import DataTableCell from "../data-table-cell/data-table-cell";
-import { DataRowContainer } from "./styles";
+import { DataRowContainer, DataCellContainer } from "./styles";
 
 const DataTableRow = ({
   rowIndex,
@@ -11,6 +11,7 @@ const DataTableRow = ({
   onChange,
   toggleEdit,
   editingRow,
+  spread = [],
 }) => {
   const handleClick = React.useCallback(() => {
     toggleEdit(editingRow ? null : rowIndex);
@@ -19,7 +20,7 @@ const DataTableRow = ({
   return (
     <DataRowContainer>
       {keys?.map((_, i) => (
-        <td key={i}>
+        <DataCellContainer key={i}>
           <DataTableCell
             name={keys[i]}
             value={underscoreString(
@@ -27,8 +28,9 @@ const DataTableRow = ({
             )}
             onChange={onChange}
             disabled={editingRow !== rowIndex}
+            spread={spread[i]}
           />
-        </td>
+        </DataCellContainer>
       ))}
       {toggleEdit && (
         <td>

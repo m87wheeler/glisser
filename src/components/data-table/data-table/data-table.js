@@ -1,6 +1,11 @@
 import * as React from "react";
 import DataTableRow from "../data-table-row/data-table-row";
-import { DataTableContainer, DataTableElement } from "./styles";
+import { DataRowContainer } from "../data-table-row/styles";
+import {
+  DataHeaderElement,
+  DataTableContainer,
+  DataTableElement,
+} from "./styles";
 
 const DataTable = ({
   data = [],
@@ -15,13 +20,13 @@ const DataTable = ({
     <DataTableContainer>
       <DataTableElement>
         <thead>
-          <tr>
+          <DataRowContainer>
             {headers?.map((header, i) => (
-              <th key={i} style={{ width: `${spread[i] * 10}%` }}>
+              <DataHeaderElement key={i} spread={spread[i]}>
                 {header}
-              </th>
+              </DataHeaderElement>
             ))}
-          </tr>
+          </DataRowContainer>
         </thead>
         <tbody>
           {data?.map((row, i) => (
@@ -33,6 +38,7 @@ const DataTable = ({
               onChange={onChange}
               toggleEdit={toggleEdit}
               editingRow={editingRow}
+              spread={spread}
             />
           ))}
         </tbody>

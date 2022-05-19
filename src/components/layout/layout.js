@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useDataStore } from "../../store/use-data-store";
+import Header from "../header/header";
 import Button, { ButtonGroup } from "../button/button";
 import DataTable from "../data-table/data-table/data-table";
 import DataTableSearch from "../data-table/data-table-search/data-table-search";
@@ -68,6 +69,7 @@ const Layout = () => {
 
   return (
     <LayoutContainer>
+      <Header>My Amazing Record Collection</Header>
       <DataTableSearch searchKeys={["artist.name", "album_title"]} />
       <DataTable
         data={tableData}
@@ -76,7 +78,7 @@ const Layout = () => {
         onChange={handleUpdateData}
         toggleEdit={handleEditRow}
         editingRow={editingRow}
-        spread={[0.4, 0.3, 0.1, 0.1, 0.1]}
+        spread={[0.35, 0.3, 0.1, 0.1, 0.1]}
       />
       <ButtonGroup>
         <Button onClick={handleOffset(-1)} disabled={pageOffset === 0}>
