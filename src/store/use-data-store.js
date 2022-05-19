@@ -20,4 +20,8 @@ export const useDataStore = create((set, get) => ({
   setEditingRow: (editingRow) => {
     set({ editingRow });
   },
+  searchResults: [],
+  setSearchResults: (searchResults) => {
+    set({ searchResults });
+  },
 }));

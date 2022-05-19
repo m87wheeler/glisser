@@ -2,6 +2,7 @@ import * as React from "react";
 import { useDataStore } from "../../store/use-data-store";
 import Button from "../button/button";
 import DataTable from "../data-table/data-table";
+import DataTableSearch from "../data-table/data-table-search";
 
 const Layout = () => {
   const {
@@ -60,6 +61,7 @@ const Layout = () => {
 
   return (
     <div>
+      <DataTableSearch searchKeys={["artist.name", "album_title"]} />
       <DataTable
         data={data?.[pageOffset]}
         headers={["Artist", "Album", "Year", "Condition", "Action"]}
