@@ -16,6 +16,15 @@ export const ButtonElement = styled.button`
     border-color: ${({ variant = "secondary" }) => `var(--${variant}-10)`};
     background-color: var(--primary-20);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--grey-10);
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
 `;
 
 export const ButtonGroup = styled.div`

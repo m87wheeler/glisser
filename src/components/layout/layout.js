@@ -79,8 +79,15 @@ const Layout = () => {
         spread={[0.4, 0.3, 0.1, 0.1, 0.1]}
       />
       <ButtonGroup>
-        <Button onClick={handleOffset(-1)}>Previous</Button>
-        <Button onClick={handleOffset(1)}>Next</Button>
+        <Button onClick={handleOffset(-1)} disabled={pageOffset === 0}>
+          Previous
+        </Button>
+        <Button
+          onClick={handleOffset(1)}
+          disabled={pageOffset === data?.length - 1}
+        >
+          Next
+        </Button>
       </ButtonGroup>
     </LayoutContainer>
   );

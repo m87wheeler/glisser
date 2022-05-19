@@ -5,7 +5,7 @@ import { DataSearchElement } from "./styles";
 
 const DataTableSearch = ({ searchKeys = [] }) => {
   const [searchValue, setSearchValue] = React.useState("");
-  const { data, setSearchResults } = useDataStore();
+  const { data, setSearchResults, setPageOffset } = useDataStore();
 
   const handleChange = React.useCallback((e) => {
     setSearchValue(e.target.value);
@@ -34,10 +34,10 @@ const DataTableSearch = ({ searchKeys = [] }) => {
     return updatedData;
   }, [data, searchValue]);
 
-  React.useEffect(
-    () => setSearchResults(searchResults),
-    [setSearchResults, searchResults]
-  );
+  React.useEffect(() => {
+    setPageOffset(-1);
+    setSearchResults(searchResults);
+  }, [setSearchResults, searchResults, setPageOffset]);
 
   return (
     <DataSearchElement
