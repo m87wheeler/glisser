@@ -24,6 +24,7 @@ const DataTableSearch = ({ searchKeys = [] }) => {
       }
       return undefined;
     });
+
     let updatedData = [];
     while (results.length) {
       let shortened = results.splice(0, maxArrayLength);

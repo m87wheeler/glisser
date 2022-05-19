@@ -12,6 +12,7 @@ const Layout = () => {
     setEditingRow,
     pageOffset,
     setPageOffset,
+    searchResults,
   } = useDataStore();
 
   // Toggle
@@ -59,11 +60,16 @@ const Layout = () => {
     [pageOffset, editingRow, data, setData]
   );
 
+  const tableData = React.useMemo(() => {
+    const activeData = searchResults?.length ? searchResults : data;
+    return activeData?.[pageOffset];
+  }, [data, pageOffset, searchResults]);
+
   return (
     <div>
       <DataTableSearch searchKeys={["artist.name", "album_title"]} />
       <DataTable
-        data={data?.[pageOffset]}
+        data={tableData}
         headers={["Artist", "Album", "Year", "Condition", "Action"]}
         dataKeys={["artist.name", "album_title", "year", "condition"]}
         onChange={handleUpdateData}
