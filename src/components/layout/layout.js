@@ -16,9 +16,13 @@ const Layout = () => {
   // Toggle
   const handleOffset = React.useCallback(
     (n) => () => {
-      setOffset((state) => state + n);
+      setOffset((state) => {
+        return state + n < 0 || state + n > data?.length - 1
+          ? state
+          : state + n;
+      });
     },
-    []
+    [data]
   );
 
   // Update
