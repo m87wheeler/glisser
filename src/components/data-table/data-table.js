@@ -1,5 +1,6 @@
 import * as React from "react";
 import DataTableRow from "./data-table-row";
+import { DataTableContainer } from "./styles";
 
 const DataTable = ({
   data = [],
@@ -10,7 +11,7 @@ const DataTable = ({
   editingRow = null,
 }) => {
   return (
-    <table>
+    <DataTableContainer>
       <thead>
         <tr>
           {headers?.map((header, i) => (
@@ -31,7 +32,7 @@ const DataTable = ({
           />
         ))}
       </tbody>
-    </table>
+    </DataTableContainer>
   );
 };
 

@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const Table = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
+export const DataTableContainer = styled.table`
+  width: 100%;
 `;
 
-export const Row = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-`;
+// padding: 1rem;
+// background-color: var(--primary-10);
+// border-radius: var(--border-radius);
+// overflow: hidden;

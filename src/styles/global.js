@@ -1,0 +1,44 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyles = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        // COLORS
+        --white: #ffffff;
+        --black: #111111;
+
+        --primary-10: #131725;
+        --primary-10-contrast: var(--white);
+        --primary-20: #1B223B;
+        --primary-20-contrast: var(--white);
+
+        --secondary-10: #FC6A00;
+
+        --grey-10: #A2A5BF;
+
+
+        // FONTS
+        --font-family-sans: Lato, sans-serif;
+
+        --font-size-sm: .9rem;
+        --font-size-md: 1rem;
+
+        // UI
+        --border-radius-xs: .25rem;
+        --border-radius-sm: .5rem;
+        --border-radius-md: .75rem;
+        --border-radius-lg: 1rem;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        font-family: var(--font-family-sans);
+        text-rendering: optimizeLegibility;
+    }
+`;
