@@ -1,7 +1,10 @@
 import * as React from "react";
+import { ButtonElement, ButtonGroup } from "./styles";
 
 const Button = ({ children, ...props }) => {
-  return <button {...props}>{children}</button>;
+  return <ButtonElement {...props}>{children}</ButtonElement>;
 };
+
+export { ButtonGroup };
 
 export default Button;

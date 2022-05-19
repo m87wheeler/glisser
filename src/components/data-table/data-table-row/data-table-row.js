@@ -1,5 +1,7 @@
 import * as React from "react";
-import DataTableCell from "./data-table-cell/data-table-cell";
+import Button from "../../button/button";
+import DataTableCell from "../data-table-cell/data-table-cell";
+import { DataRowContainer } from "./styles";
 
 const DataTableRow = ({
   rowIndex,
@@ -15,7 +17,7 @@ const DataTableRow = ({
   }, [editingRow, rowIndex, toggleEdit]);
 
   return (
-    <tr>
+    <DataRowContainer>
       {keys?.map((_, i) => (
         <td key={i}>
           <DataTableCell
@@ -28,12 +30,12 @@ const DataTableRow = ({
       ))}
       {toggleEdit && (
         <td>
-          <button onClick={handleClick}>
+          <Button onClick={handleClick}>
             {editingRow === rowIndex ? "Save" : "Edit"}
-          </button>
+          </Button>
         </td>
       )}
-    </tr>
+    </DataRowContainer>
   );
 };
 

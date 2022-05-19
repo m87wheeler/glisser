@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DataCellElement = styled.input`
   width: 100%;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem;
   font-size: var(--font-size-sm);
   font-weight: lighter;
   background-color: var(--grey-10);

@@ -1,8 +1,9 @@
 import * as React from "react";
 import { useDataStore } from "../../store/use-data-store";
-import Button from "../button/button";
-import DataTable from "../data-table/data-table";
-import DataTableSearch from "../data-table/data-table-search";
+import Button, { ButtonGroup } from "../button/button";
+import DataTable from "../data-table/data-table/data-table";
+import DataTableSearch from "../data-table/data-table-search/data-table-search";
+import { LayoutContainer } from "./styles";
 
 const Layout = () => {
   const {
@@ -66,7 +67,7 @@ const Layout = () => {
   }, [data, pageOffset, searchResults]);
 
   return (
-    <div>
+    <LayoutContainer>
       <DataTableSearch searchKeys={["artist.name", "album_title"]} />
       <DataTable
         data={tableData}
@@ -75,12 +76,13 @@ const Layout = () => {
         onChange={handleUpdateData}
         toggleEdit={handleEditRow}
         editingRow={editingRow}
+        spread={[0.4, 0.3, 0.1, 0.1, 0.1]}
       />
-      <div>
+      <ButtonGroup>
         <Button onClick={handleOffset(-1)}>Previous</Button>
         <Button onClick={handleOffset(1)}>Next</Button>
-      </div>
-    </div>
+      </ButtonGroup>
+    </LayoutContainer>
   );
 };
 

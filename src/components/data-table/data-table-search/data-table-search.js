@@ -1,6 +1,6 @@
 import * as React from "react";
-import { useDataStore } from "../../store/use-data-store";
-import { searchString } from "../../utils";
+import { useDataStore } from "../../../store/use-data-store";
+import { searchString } from "../../../utils";
 
 const DataTableSearch = ({ searchKeys = [] }) => {
   const [searchValue, setSearchValue] = React.useState("");

@@ -16,8 +16,8 @@ export const GlobalStyles = createGlobalStyle`
         --primary-10-contrast: var(--white);
         --primary-20: #1B223B;
         --primary-20-contrast: var(--white);
-
         --secondary-10: #FC6A00;
+        --secondary-10-contrast: var(--white);
 
         --grey-10: #A2A5BF;
 
@@ -33,6 +33,9 @@ export const GlobalStyles = createGlobalStyle`
         --border-radius-sm: .5rem;
         --border-radius-md: .75rem;
         --border-radius-lg: 1rem;
+
+        --responsive-max: 1200px;
+        --responsive-min: 800px;
     }
 
     html, body {
@@ -40,5 +43,6 @@ export const GlobalStyles = createGlobalStyle`
         height: 100%;
         font-family: var(--font-family-sans);
         text-rendering: optimizeLegibility;
+        background-color: var(--primary-10);
     }
 `;
