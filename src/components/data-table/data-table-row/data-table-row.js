@@ -1,8 +1,9 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 import { underscoreString } from "../../../utils";
+import { DataRowContainer, DataCellContainer } from "./styles";
 import Button from "../../button/button";
 import DataTableCell from "../data-table-cell/data-table-cell";
-import { DataRowContainer, DataCellContainer } from "./styles";
 
 const DataTableRow = ({
   rowIndex,
@@ -41,6 +42,16 @@ const DataTableRow = ({
       )}
     </DataRowContainer>
   );
+};
+
+DataTableRow.propTypes = {
+  rowIndex: PropTypes.number.isRequired,
+  row: PropTypes.object.isRequired,
+  keys: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onChange: PropTypes.func,
+  toggleEdit: PropTypes.func,
+  editingRow: PropTypes.oneOf([PropTypes.number, null]),
+  spread: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default DataTableRow;

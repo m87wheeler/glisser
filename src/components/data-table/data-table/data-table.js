@@ -1,4 +1,5 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 import DataTableRow from "../data-table-row/data-table-row";
 import { DataRowContainer } from "../data-table-row/styles";
 import {
@@ -45,6 +46,15 @@ const DataTable = ({
       </DataTableElement>
     </DataTableContainer>
   );
+};
+
+DataTable.propTypes = {
+  data: PropTypes.array.isRequired,
+  dataKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onChange: PropTypes.func,
+  toggleEdit: PropTypes.func,
+  editingRow: PropTypes.oneOf([PropTypes.number, null]),
+  spread: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default DataTable;
